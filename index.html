@@ -34,25 +34,19 @@
   }
 
   /* ヘッダー */
+  .hero-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    display: block;
+  }
   .hero {
-    background: url('hero.jpg') center/cover no-repeat;
-    border-radius: 16px;
-    padding: 32px 28px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #3d2020 40%, #5a1a1a 100%);
+    border-radius: 0 0 16px 16px;
+    padding: 24px 28px;
     margin-bottom: 24px;
     color: white;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(60,10,10,0.5) 100%);
-    border-radius: 16px;
-  }
-  .hero-eyebrow, .hero h1, .hero-meta {
-    position: relative;
-    z-index: 1;
   }
   .hero-eyebrow {
     font-size: 13px;
@@ -251,13 +245,12 @@
 </head>
 <body>
 
+<img src="hero.jpg" class="hero-img" alt="かごしま水族館と桜島">
 <div class="hero">
   <div class="hero-eyebrow">旅の便利帳 · Travel Guide</div>
   <h1>鹿児島　1泊2日<br>かごしま水族館 × 桜島</h1>
   <div class="hero-meta">
     <span class="hero-tag">📅 2026年5月27日(水)〜28日(木)</span>
-    <span class="hero-tag">✈️ JL645</span>
-    <span class="hero-tag">🏨 ダイワロイネット天文館</span>
   </div>
 </div>
 
@@ -469,6 +462,8 @@
         錦江湾とつながった自然の海の水路（全長275m）。11:30〜15:30の間いつでも見られる。<br>
         ランチ前後に立ち寄るのがおすすめ。
       </div>
+      <img src="shiokaze.PNG" class="tl-photo" alt="しおかぜイルカウォッチング" onerror="this.style.display='none'">
+      <div class="photo-caption">しおかぜイルカウォッチング</div>
     </div>
 
     <div class="tl-item food">
