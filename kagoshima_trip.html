@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌋 鹿児島旅の便利帳 2026 5/27-28</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+  :root {
+    --ash: #1a1a1a;
+    --lava: #c0392b;
+    --ember: #d35400;
+    --sky: #1a6fa8;
+    --cream: #f0f0f0;
+    --mist: #444444;
+    --green: #1e8449;
+    --warn: #b7770a;
+    --alert: #c0392b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e8e8e8;
+    color: var(--ash);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+  }
+
+  /* ヘッダー */
+  .hero {
+    background: url('hero.jpg') center/cover no-repeat;
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin-bottom: 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(60,10,10,0.5) 100%);
+    border-radius: 16px;
+  }
+  .hero-eyebrow, .hero h1, .hero-meta {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f0a060;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: #ffffff;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 15px;
+  }
+  .hero-tag {
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* 警戒アラート */
+  .alert-box {
+    background: #fff0f0;
+    border-left: 5px solid var(--alert);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+  .alert-title { font-weight: 700; color: #a00000; margin-bottom: 6px; font-size: 17px; }
+  .alert-body { font-size: 15px; color: #1a1a1a; line-height: 1.7; }
+  .alert-link { color: var(--sky); text-decoration: none; font-size: 14px; display: inline-block; margin-top: 6px; font-weight: 500; }
+  .alert-link:hover { text-decoration: underline; }
+
+  /* セクション */
+  .section { margin-bottom: 24px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .section-date {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 2px;
+  }
+
+  /* タイムライン */
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--lava), var(--sky));
+    opacity: 0.4;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 16px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: 20px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--lava);
+    border: 2px solid #e8e8e8;
+    box-shadow: 0 0 0 2px var(--lava);
+  }
+  .tl-item.transport::before { background: var(--sky); box-shadow: 0 0 0 2px var(--sky); }
+  .tl-item.hotel::before { background: var(--ember); box-shadow: 0 0 0 2px var(--ember); }
+  .tl-item.food::before { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
+
+  .tl-time {
+    font-size: 14px;
+    font-weight: 700;
+    color: #555555;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .tl-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .tl-detail {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.7;
+  }
+  .tl-detail strong { color: #1a1a1a; font-weight: 700; }
+  .tl-link {
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 4px;
+    font-size: 13px;
+    color: var(--sky);
+    text-decoration: none;
+    padding: 4px 12px;
+    border: 1.5px solid var(--sky);
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .tl-link:hover { background: var(--sky); color: white; }
+  .badge-confirm { background: #e8f5e9; color: #1a6630; font-size: 12px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; }
+  .badge-check { background: #fff3e0; color: #b05000; font-size: 12px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; }
+
+  /* 施設カード */
+  .facility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 540px) { .facility-grid { grid-template-columns: 1fr; } }
+
+  .facility-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--lava);
+  }
+  .facility-card.transport { border-top-color: var(--sky); }
+  .facility-card.hotel { border-top-color: var(--ember); }
+
+  .fc-name { font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+  .fc-row { display: flex; gap: 8px; font-size: 14px; margin-bottom: 6px; align-items: flex-start; }
+  .fc-label { color: #555555; min-width: 58px; flex-shrink: 0; font-weight: 500; }
+  .fc-value { color: #1a1a1a; }
+  .fc-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: white;
+    background: var(--sky);
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 500;
+  }
+  .facility-card.hotel .fc-link { background: var(--ember); }
+
+  /* 注意事項 */
+  .note-box {
+    background: #fffbe6;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #c09000;
+  }
+  .note-title { font-size: 16px; font-weight: 700; color: #7a5800; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .note-list { font-size: 15px; color: #1a1a1a; padding-left: 18px; }
+  .note-list li { margin-bottom: 6px; line-height: 1.7; }
+
+  /* 写真 */
+  .tl-photo { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-top: 10px; display: block; }
+  .photo-caption { font-size: 12px; color: #777777; margin-top: 4px; margin-bottom: 4px; text-align: right; }
+
+  /* フッター */
+  .footer { text-align: center; font-size: 13px; color: #555555; margin-top: 32px; padding-top: 20px; border-top: 1px solid #cccccc; }
+  .status-check { display: inline-block; background: #e8f5e9; color: #1a6630; font-size: 13px; padding: 4px 12px; border-radius: 10px; margin-bottom: 8px; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">旅の便利帳 · Travel Guide</div>
+  <h1>鹿児島　1泊2日<br>かごしま水族館 × 桜島</h1>
+  <div class="hero-meta">
+    <span class="hero-tag">📅 2026年5月27日(水)〜28日(木)</span>
+    <span class="hero-tag">✈️ JL645</span>
+    <span class="hero-tag">🏨 ダイワロイネット天文館</span>
+  </div>
+</div>
+
+<!-- 桜島アラート -->
+<div class="alert-box">
+  <div class="alert-icon">🌋</div>
+  <div>
+    <div class="alert-title">⚠️ 桜島 噴火警戒レベル3（入山規制）継続中</div>
+    <div class="alert-body">
+      2025年5月時点で<strong>レベル3・入山規制</strong>が継続しています。火口から概ね2km圏内への立入禁止。5月の噴火回数は増加傾向（59回/18日間）で、火山ガスも多い状態です。<br>
+      ⬦ 桜島フェリーでの<strong>外周からの観覧は可能</strong>です。<br>
+      ⬦ 出発前に必ず最新情報を確認してください。
+    </div>
+    <a href="https://typhoon.yahoo.co.jp/weather/jp/volcano/506/" class="alert-link" target="_blank">📡 Yahoo! 桜島 最新火山情報を確認 →</a>
+    <a href="https://www.data.jma.go.jp/kagoshima/inf/monthly_doc/pdf/mon_vol_20250520.pdf" class="alert-link" target="_blank" style="margin-left:8px">🗂 気象庁 最新資料 →</a>
+  </div>
+</div>
+
+<!-- DAY1 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#fff0ec;">🛫</div>
+    <div>
+      <div class="section-title">DAY 1 — 2026年5月27日（水）</div>
+      <div class="section-date">空港着 → 仙巌園・竜ケ水駅 → 城山ホテル日帰り入浴 → 天文館泊</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item transport">
+      <div class="tl-time">7:50〜8:00頃 高島平発</div>
+      <div class="tl-title">高島平駅 → 羽田空港</div>
+      <div class="tl-detail">
+        都営三田線 → 三田（泉岳寺直通）→ 京急空港線 乗換2回・約1時間10分。<br>
+        <strong>9:00〜9:10頃 羽田空港着</strong>（国内線・手荷物のみのため1時間前でOK）。<br>
+        ※当日の正確な時刻はYahoo!乗換案内で要確認。<br>
+        <strong>✈️ JL645　HND 10:05 → KOJ 11:55</strong>
+      </div>
+      <a href="https://transit.yahoo.co.jp/" class="tl-link" target="_blank">🔍 Yahoo!乗換で出発時刻を確認</a>
+    </div>
+
+    <div class="tl-item transport">
+      <div class="tl-time">12:10〜13:00頃</div>
+      <div class="tl-title">鹿児島空港 → 天文館（リムジンバス）</div>
+      <div class="tl-detail">
+        KOJ着11:55 → 荷物受取後、到着口すぐ前のバス乗り場へ。<br>
+        <strong>南国交通・鹿児島交通 空港連絡バス</strong>（予約不要・先着順）<br>
+        所要約50分 ／ 大人1,400円 ／ タッチ決済可
+      </div>
+      <a href="https://nangoku-kotsu.com/ashuttle/" class="tl-link" target="_blank">🚌 南国交通 時刻表</a>
+      <a href="https://www.iwasaki-corp.com/kagoshima_kotsu/airport-bus/airport/" class="tl-link" target="_blank" style="margin-left:4px">鹿児島交通 時刻表</a>
+    </div>
+
+    <div class="tl-item hotel">
+      <div class="tl-time">13:00頃</div>
+      <div class="tl-title">ダイワロイネット 天文館 — 荷物預け</div>
+      <div class="tl-detail">
+        チェックイン14:00〜。先に荷物だけ預けて出発。<br>
+        センテラス天文館内・天文館通電停より徒歩1分。
+      </div>
+      <a href="https://www.daiwaresort.jp/roynet/kagoshimatp/" class="tl-link" target="_blank" style="background:var(--ember)">🏨 ホテル公式サイト</a>
+    </div>
+
+    <div class="tl-item transport">
+      <div class="tl-time">13:15頃</div>
+      <div class="tl-title">天文館 → 鹿児島駅 → 仙巌園駅（JR日豊本線）</div>
+      <div class="tl-detail">
+        天文館通電停 → 市電で鹿児島駅前 → JR日豊本線（国分・宮崎方面、普通列車）に乗換。<br>
+        <strong>鹿児島中央〜仙巌園駅：約10分・240円</strong>（特急は停車しないので普通列車に乗ること）<br>
+        ※1時間に1〜2本。JR九州公式で時刻を確認のこと。
+      </div>
+      <a href="https://www.jrkyushu-timetable.jp/cgi-bin/sp/sp-tt_dep.cgi/1132001/" class="tl-link" target="_blank">🚃 仙巌園駅 時刻表（JR九州）</a>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">14:00〜15:30頃</div>
+      <div class="tl-title">仙巌園駅 — 下車して散策</div>
+      <div class="tl-detail">
+        2025年3月開業の新駅。ホームからも鹿児島湾・桜島が一望できる絶景。<br>
+        駅から徒歩すぐに世界文化遺産「仙巌園」（薩摩藩島津家別邸）、スターバックス仙巌園前店など。<br>
+        ⬦ 仙巌園入園は任意（有料）。散策だけでも十分楽しめます。
+      </div>
+      <img src="senganen.png" class="tl-photo" alt="仙巌園" onerror="this.style.display='none'">
+      <div class="photo-caption">仙巌園と桜島</div>
+      <a href="https://www.senganen.jp/" class="tl-link" target="_blank">🌿 仙巌園 公式サイト（営業時間確認）</a>
+    </div>
+
+    <div class="tl-item transport">
+      <div class="tl-time">15:30〜16:00頃（⚠️ 要時刻確認）</div>
+      <div class="tl-title">仙巌園駅 → 竜ケ水駅（1駅）— ホームで景色を眺めるだけ</div>
+      <div class="tl-detail">
+        <strong>⚠️ 竜ケ水駅は停車本数が少ない！（最大2時間半の間隔あり）</strong><br>
+        事前に上り・下りの時刻を確認して、ホーム観覧後すぐ折り返せる便を計画すること。<br>
+        ホームからは鹿児島湾と桜島が一望できる「桜島の見える駅」。災害復旧記念碑も。<br>
+        ⬦ ICカード（SUGOCA等）は竜ケ水駅では使用不可。現金またはきっぷを用意。
+      </div>
+      <img src="ryugamizu.png" class="tl-photo" alt="竜ケ水駅" onerror="this.style.display='none'">
+      <div class="photo-caption">竜ケ水駅ホームからの眺め</div>
+      <a href="https://www.jrkyushu-timetable.jp/cgi-bin/sp/sp-tt_dep.cgi/2902901/" class="tl-link" target="_blank">🚃 竜ケ水駅 時刻表（JR九州）</a>
+      <a href="https://seaside-station.com/station/ryugamizu/" class="tl-link" target="_blank" style="margin-left:4px">海の見える駅</a>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">16:30〜18:30頃</div>
+      <div class="tl-title">🏔 城山ホテル鹿児島（SHIROYAMA HOTEL）— 日帰り温泉「さつま乃湯」</div>
+      <div class="tl-detail">
+        <strong>日帰り入浴時間：13:00〜21:00（要事前予約確認）</strong><br>
+        地下1,000mから湧く美人の湯。標高108mの露天風呂から桜島・鹿児島市街を一望。<br>
+        温泉宿・ホテル総選挙2025「美肌部門」全国1位・「絶景部門」全国2位（九州1位）受賞。<br>
+        日帰り入浴料：大人約2,350円〜（プランにより異なる）<br>
+        <strong>アクセス：</strong>鹿児島中央駅からタクシー約10分 or シャトルバス利用
+      </div>
+      <img src="satsumanoyu.jpg" class="tl-photo" alt="さつま乃湯" onerror="this.style.display='none'">
+      <div class="photo-caption">さつま乃湯 — 桜島を望む露天風呂</div>
+      <a href="https://www.shiroyama-g.co.jp/spa/satsuma" class="tl-link" target="_blank">♨️ さつま乃湯 公式（プラン・料金確認）</a>
+      <a href="https://www.shiroyama-g.co.jp/spa/plan/" class="tl-link" target="_blank" style="margin-left:4px">日帰りプラン一覧</a>
+    </div>
+
+    <div class="tl-item hotel">
+      <div class="tl-time">19:00頃</div>
+      <div class="tl-title">ホテルチェックイン → 天文館でとんかつ夕食 🍽</div>
+      <div class="tl-detail">
+        城山ホテルからタクシーか市電でホテルへ。荷物をチェックイン。<br>
+        天文館エリアのとんかつ屋さんで夕食。<br>
+        <strong>⚠️ 営業日・予約要否を公式サイトまたは電話で事前確認。</strong>
+      </div>
+      <img src="tonkatsu.jpg" class="tl-photo" alt="とんかつ" onerror="this.style.display='none'">
+      <div class="photo-caption">とんかつ夕食</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DAY2 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#e8f4fd;">🐠</div>
+    <div>
+      <div class="section-title">DAY 2 — 2026年5月28日（木）</div>
+      <div class="section-date">水族館フル満喫 → 桜島 → 空港へ</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item hotel">
+      <div class="tl-time">〜9:00</div>
+      <div class="tl-title">朝食 → チェックアウト・荷物預け</div>
+      <div class="tl-detail">
+        チェックアウト：〜11:00。荷物はフロントに預けて水族館へ。<br>
+        ジンベエザメの食事（10:15）に間に合うよう早めに出発！
+      </div>
+    </div>
+
+    <div class="tl-item transport">
+      <div class="tl-time">9:15発</div>
+      <div class="tl-title">天文館 → かごしま水族館（市電）</div>
+      <div class="tl-detail">
+        天文館通電停 → 市電1系統「水族館口」下車 → 徒歩8分。所要約15分。<br>
+        9:30の開館と同時に入館できるよう。
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">9:30</div>
+      <div class="tl-title">🐠 開館！入館・館内確認</div>
+      <div class="tl-detail">
+        入館料：大人1,500円。<br>
+        入口で当日のイベント時刻を確認。タッチの時間（10:45〜）なども確認。
+      </div>
+      <a href="https://ioworld.jp/regularevent" class="tl-link" target="_blank">📋 通常イベント時刻表</a>
+    </div>
+
+    <div class="tl-item" style="border-left: 3px solid #e67e22;">
+      <div class="tl-time">10:00 ⚑ 席取り移動（2階 黒潮大水槽）</div>
+      <div class="tl-title">🦈 ジンベエザメの食事の時間（約5分）10:15〜</div>
+      <div class="tl-detail">
+        <strong>15分前：10:00には2階黒潮大水槽へ移動・席取り。</strong><br>
+        ジンベエザメや黒潮大水槽の魚たちの食事を解説とともに観覧。
+      </div>
+      <img src="jinbeizame.jpg" class="tl-photo" alt="ジンベエザメ" onerror="this.style.display='none'">
+      <div class="photo-caption">ジンベエザメ 黒潮大水槽</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">10:20〜10:45</div>
+      <div class="tl-title">館内自由見学 / タッチの時間（10:45〜）</div>
+      <div class="tl-detail">
+        ヒトデ・ウニ・ナマコなどに触れる「タッチの時間」は10:45〜16:15まで随時。<br>
+        クラゲ回廊・うみうし研究所・鹿児島の深海なども。
+      </div>
+    </div>
+
+    <div class="tl-item" style="border-left: 3px solid #2980b9;">
+      <div class="tl-time">10:45 ⚑ 席取り移動（1階 イルカプール）</div>
+      <div class="tl-title">🐬 いるかの時間（約15分）11:00〜</div>
+      <div class="tl-detail">
+        <strong>15分前：10:45には1階イルカプールへ移動・席取り。</strong><br>
+        「かごすいラジオ〜イルカ質問部屋〜」コンセプト。質問に実験で回答する参加型ショー。
+      </div>
+    </div>
+
+    <div class="tl-item" style="border-left: 3px solid #27ae60;">
+      <div class="tl-time">11:15〜（随時）</div>
+      <div class="tl-title">🌊 しおかぜイルカウォッチング（11:30〜15:30）</div>
+      <div class="tl-detail">
+        屋外イルカ水路で自由に泳ぐイルカを観覧。<strong>無料エリア。</strong><br>
+        錦江湾とつながった自然の海の水路（全長275m）。11:30〜15:30の間いつでも見られる。<br>
+        ランチ前後に立ち寄るのがおすすめ。
+      </div>
+    </div>
+
+    <div class="tl-item food">
+      <div class="tl-time">12:00〜13:00頃</div>
+      <div class="tl-title">🍽 館内レストランでランチ</div>
+      <div class="tl-detail">
+        水族館内のレストランで。ウォッチングとランチを組み合わせてもOK。
+      </div>
+      <a href="https://ioworld.jp/facilities/shop#restaurant" class="tl-link" target="_blank">レストラン情報</a>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">13:00〜14:00</div>
+      <div class="tl-title">館内自由見学（残り時間）</div>
+      <div class="tl-detail">
+        アクアラボ（12:00/14:00）・あざらしの時間（15:15）なども時間が合えば。<br>
+        14:00を目標に退館準備。
+      </div>
+    </div>
+
+    <div class="tl-item transport">
+      <div class="tl-time">14:05</div>
+      <div class="tl-title">水族館 → 桜島フェリー乗り場（徒歩5分）</div>
+      <div class="tl-detail">
+        日中は15〜30分間隔で運航。待ち時間なく乗れる。<strong>大人250円。</strong>
+      </div>
+      <a href="https://www.city.kagoshima.lg.jp/sakurajima-ferry/koro-jikoku/timetable.html" class="tl-link" target="_blank">⛴ フェリー時刻表</a>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">14:15〜15:30頃</div>
+      <div class="tl-title">🌋 桜島上陸 — 足湯 ＋ ビジターセンター</div>
+      <div class="tl-detail">
+        <strong>✅ レベル3でも観光施設は全て通常営業（火口から2.5km以上離れているため）</strong><br>
+        ⬦ <strong>溶岩なぎさ公園 足湯</strong>：フェリーターミナルから徒歩8分・無料（タオル持参or現地購入）<br>
+        　⚠️ メンテナンス休業の可能性あり → 出発前にビジターセンター公式で確認<br>
+        ⬦ <strong>桜島ビジターセンター</strong>：噴火の歴史・溶岩・自然を学べるミニ博物館・無料<br>
+        ⬦ 溶岩なぎさ遊歩道からの桜島・錦江湾の景色も絶景。
+      </div>
+      <img src="ashiyu.jpg" class="tl-photo" alt="溶岩なぎさ公園 足湯" onerror="this.style.display='none'">
+      <div class="photo-caption">溶岩なぎさ公園 足湯と桜島</div>
+      <a href="https://visitor.sakurajima.gr.jp/" class="tl-link" target="_blank">🌋 ビジターセンター公式（足湯状況確認）</a>
+    </div>
+
+    <div class="tl-item transport">
+      <div class="tl-time">15:30〜15:50頃</div>
+      <div class="tl-title">桜島 → 鹿児島港（フェリー）→ ホテルへ</div>
+      <div class="tl-detail">
+        フェリー所要15分。鹿児島港から市電またはタクシーでホテルへ（約15分）。
+      </div>
+    </div>
+
+    <div class="tl-item hotel">
+      <div class="tl-time">16:10〜16:30頃</div>
+      <div class="tl-title">ホテルで荷物ピックアップ → 天文館バス停へ</div>
+      <div class="tl-detail">
+        フロントで荷物を受け取り。天文館バス停まで徒歩1分。
+      </div>
+    </div>
+
+    <div class="tl-item transport">
+      <div class="tl-time">🎯 17:25発（目標便）</div>
+      <div class="tl-title">🚌 天文館 → 鹿児島空港（リムジンバス）→ 18:20着</div>
+      <div class="tl-detail">
+        <strong>✈️ JAL654　KOJ 20:40 → HND 22:25</strong><br>
+        17:25発 → 18:20着で、空港に2時間以上の余裕。<br>
+        次の便：17:40発→18:35着、17:55発→18:50着（どれも余裕あり）<br>
+        所要約55分 ／ 大人1,400円 ／ タッチ決済可
+      </div>
+      <a href="https://www.navitime.co.jp/bus/diagram/timelist?departure=00082217&arrival=00472747&line=00082766" class="tl-link" target="_blank">🚌 天文館発 時刻表（NAVITIME）</a>
+    </div>
+
+    <div class="tl-item food">
+      <div class="tl-time">18:20〜20:20頃</div>
+      <div class="tl-title">✈️ 鹿児島空港 — 夕食・お土産・チェックイン</div>
+      <div class="tl-detail">
+        空港内で夕食 ＋ お土産購入。2時間以上あるのでゆっくり過ごせる。<br>
+        出発ゲートは余裕をもって20:20頃には通過を。<br>
+        <strong>JAL654　KOJ 20:40 → HND 22:25（座席 K45）</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 施設リンク集 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon" style="background:#e8f5e9;">🔗</div>
+    <div>
+      <div class="section-title">施設リンク集 — いつでもここから確認</div>
+    </div>
+  </div>
+
+  <div class="facility-grid">
+
+    <div class="facility-card">
+      <div class="fc-name">🐠 かごしま水族館</div>
+      <div class="fc-row"><span class="fc-label">営業時間</span><span class="fc-value">9:30〜18:00（入館17:00まで）</span></div>
+      <div class="fc-row"><span class="fc-label">休館日</span><span class="fc-value">12月第1月曜〜4日間</span></div>
+      <div class="fc-row"><span class="fc-label">入館料</span><span class="fc-value">大人1,500円</span></div>
+      <div class="fc-row"><span class="fc-label">電話</span><span class="fc-value">099-226-2233</span></div>
+      <a href="https://ioworld.jp/" class="fc-link" target="_blank">公式サイトを開く</a>
+    </div>
+
+    <div class="facility-card">
+      <div class="fc-name">♨️ 城山ホテル さつま乃湯</div>
+      <div class="fc-row"><span class="fc-label">日帰り入浴</span><span class="fc-value">13:00〜21:00</span></div>
+      <div class="fc-row"><span class="fc-label">料金</span><span class="fc-value">大人2,350円〜（プランにより異なる）</span></div>
+      <div class="fc-row"><span class="fc-label">特徴</span><span class="fc-value">美肌部門全国1位・桜島一望の露天風呂</span></div>
+      <div class="fc-row"><span class="fc-label">電話</span><span class="fc-value">099-224-2211</span></div>
+      <a href="https://www.shiroyama-g.co.jp/spa/plan/" class="fc-link" target="_blank">日帰りプランを確認</a>
+    </div>
+
+    <div class="facility-card hotel">
+      <div class="fc-name" style="color:var(--ember)">🏨 ダイワロイネット天文館</div>
+      <div class="fc-row"><span class="fc-label">チェックイン</span><span class="fc-value">14:00〜</span></div>
+      <div class="fc-row"><span class="fc-label">チェックアウト</span><span class="fc-value">〜11:00</span></div>
+      <div class="fc-row"><span class="fc-label">アクセス</span><span class="fc-value">天文館通電停 徒歩1分</span></div>
+      <div class="fc-row"><span class="fc-label">電話</span><span class="fc-value">099-216-7255</span></div>
+      <a href="https://www.daiwaresort.jp/roynet/kagoshimatp/" class="fc-link" target="_blank">公式サイトを開く</a>
+    </div>
+
+    <div class="facility-card transport">
+      <div class="fc-name" style="color:var(--sky)">🚃 仙巌園駅・竜ケ水駅（JR）</div>
+      <div class="fc-row"><span class="fc-label">仙巌園駅</span><span class="fc-value">鹿児島中央から約10分・240円（1〜2本/時）</span></div>
+      <div class="fc-row"><span class="fc-label">竜ケ水駅</span><span class="fc-value">⚠️ 停車本数少（最大2.5h間隔）IC不可・現金のみ</span></div>
+      <a href="https://www.jrkyushu-timetable.jp/cgi-bin/sp/sp-tt_dep.cgi/1132001/" class="fc-link" target="_blank" style="background:var(--sky)">仙巌園駅 時刻表</a>
+    </div>
+
+    <div class="facility-card transport">
+      <div class="fc-name" style="color:var(--sky)">🚌 空港リムジンバス（帰り）</div>
+      <div class="fc-row"><span class="fc-label">目標便</span><span class="fc-value">天文館 17:25発 → 空港 18:20着</span></div>
+      <div class="fc-row"><span class="fc-label">次の便</span><span class="fc-value">17:40発／17:55発／18:05発…と頻発</span></div>
+      <div class="fc-row"><span class="fc-label">料金</span><span class="fc-value">大人1,400円（タッチ決済可）</span></div>
+      <a href="https://www.navitime.co.jp/bus/diagram/timelist?departure=00082217&arrival=00472747&line=00082766" class="fc-link" target="_blank" style="background:var(--sky)">時刻表（NAVITIME）</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- 注意事項 -->
+<div class="note-box">
+  <div class="note-title">📋 出発前チェックリスト</div>
+  <ul class="note-list">
+    <li>🌋 <strong>桜島の噴火警戒レベル</strong> → 気象庁 or Yahoo! 火山情報で前日再確認</li>
+    <li>🦶 <strong>溶岩なぎさ公園 足湯</strong> → メンテナンス休業の可能性あり。ビジターセンター公式で事前確認</li>
+    <li>🚃 <strong>竜ケ水駅の時刻</strong> → JR九州公式で往復時刻を確認。IC不可・現金（またはきっぷ）を用意</li>
+    <li>♨️ <strong>城山ホテル日帰り入浴</strong> → プランと予約要否を公式サイトで確認（13:00〜）</li>
+    <li>🍽 <strong>DAY1 とんかつ夕食</strong> → 営業日・予約要否を事前確認</li>
+    <li>🐠 <strong>水族館イベント時刻</strong> → 2026年4月改正済み。念のため当日入口で再確認</li>
+    <li>🚌 <strong>帰りのバス</strong> → 天文館17:25発を目標。NAVITIME で当日の時刻を再確認</li>
+    <li>☀️ 5月末の鹿児島は暑い！日焼け止め・帽子・水分持参</li>
+    <li>🦶 足湯用タオルを持参（または桜島ビジターセンターで購入可）</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <div class="status-check">✅ 情報は2025〜2026年の公式情報をもとに作成</div><br>
+  各施設の営業状況・フライト運航は出発前に必ず公式サイトまたは電話でご確認ください。<br>
+  桜島の火山情報は変動します。気象庁の最新情報を優先してください。
+</div>
+
+</body>
+</html>
