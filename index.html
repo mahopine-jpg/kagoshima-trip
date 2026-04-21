@@ -35,7 +35,7 @@
 
   /* ヘッダー */
   .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #3d2020 40%, #5a1a1a 100%);
+    background: url('hero.jpg') center/cover no-repeat;
     border-radius: 16px;
     padding: 32px 28px;
     margin-bottom: 24px;
@@ -44,13 +44,15 @@
     overflow: hidden;
   }
   .hero::before {
-    content: '🌋';
-    font-size: 120px;
+    content: '';
     position: absolute;
-    right: -10px;
-    top: -20px;
-    opacity: 0.15;
-    line-height: 1;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(60,10,10,0.5) 100%);
+    border-radius: 16px;
+  }
+  .hero-eyebrow, .hero h1, .hero-meta {
+    position: relative;
+    z-index: 1;
   }
   .hero-eyebrow {
     font-size: 13px;
@@ -339,8 +341,8 @@
         駅から徒歩すぐに世界文化遺産「仙巌園」（薩摩藩島津家別邸）、スターバックス仙巌園前店など。<br>
         ⬦ 仙巌園入園は任意（有料）。散策だけでも十分楽しめます。
       </div>
-      <img src="https://www.kagoshima-yokanavi.jp/files/upload/spot/10024/sub_01.jpg" class="tl-photo" alt="仙巌園" onerror="this.style.display='none'">
-      <div class="photo-caption">仙巌園（鹿児島市観光ナビ）</div>
+      <img src="senganen.png" class="tl-photo" alt="仙巌園" onerror="this.style.display='none'">
+      <div class="photo-caption">仙巌園と桜島</div>
       <a href="https://www.senganen.jp/" class="tl-link" target="_blank">🌿 仙巌園 公式サイト（営業時間確認）</a>
     </div>
 
@@ -353,6 +355,8 @@
         ホームからは鹿児島湾と桜島が一望できる「桜島の見える駅」。災害復旧記念碑も。<br>
         ⬦ ICカード（SUGOCA等）は竜ケ水駅では使用不可。現金またはきっぷを用意。
       </div>
+      <img src="ryugamizu.png" class="tl-photo" alt="竜ケ水駅" onerror="this.style.display='none'">
+      <div class="photo-caption">竜ケ水駅ホームからの眺め</div>
       <a href="https://www.jrkyushu-timetable.jp/cgi-bin/sp/sp-tt_dep.cgi/2902901/" class="tl-link" target="_blank">🚃 竜ケ水駅 時刻表（JR九州）</a>
       <a href="https://seaside-station.com/station/ryugamizu/" class="tl-link" target="_blank" style="margin-left:4px">海の見える駅</a>
     </div>
@@ -367,8 +371,8 @@
         日帰り入浴料：大人約2,350円〜（プランにより異なる）<br>
         <strong>アクセス：</strong>鹿児島中央駅からタクシー約10分 or シャトルバス利用
       </div>
-      <img src="https://www.shiroyama-g.co.jp/img/spa/satsuma/img_satsuma_main.jpg" class="tl-photo" alt="さつま乃湯" onerror="this.style.display='none'">
-      <div class="photo-caption">さつま乃湯（城山ホテル鹿児島公式）</div>
+      <img src="satsumanoyu.jpg" class="tl-photo" alt="さつま乃湯" onerror="this.style.display='none'">
+      <div class="photo-caption">さつま乃湯 — 桜島を望む露天風呂</div>
       <a href="https://www.shiroyama-g.co.jp/spa/satsuma" class="tl-link" target="_blank">♨️ さつま乃湯 公式（プラン・料金確認）</a>
       <a href="https://www.shiroyama-g.co.jp/spa/plan/" class="tl-link" target="_blank" style="margin-left:4px">日帰りプラン一覧</a>
     </div>
@@ -381,6 +385,8 @@
         天文館エリアのとんかつ屋さんで夕食。<br>
         <strong>⚠️ 営業日・予約要否を公式サイトまたは電話で事前確認。</strong>
       </div>
+      <img src="tonkatsu.jpg" class="tl-photo" alt="とんかつ" onerror="this.style.display='none'">
+      <div class="photo-caption">とんかつ夕食</div>
     </div>
 
   </div>
@@ -433,8 +439,8 @@
         <strong>15分前：10:00には2階黒潮大水槽へ移動・席取り。</strong><br>
         ジンベエザメや黒潮大水槽の魚たちの食事を解説とともに観覧。
       </div>
-      <img src="https://ioworld.jp/aqua/wp-content/uploads/2014/02/035.jpg" class="tl-photo" alt="ジンベエザメ 黒潮大水槽" onerror="this.style.display='none'">
-      <div class="photo-caption">黒潮大水槽（いおワールドかごしま水族館公式）</div>
+      <img src="jinbeizame.jpg" class="tl-photo" alt="ジンベエザメ" onerror="this.style.display='none'">
+      <div class="photo-caption">ジンベエザメ 黒潮大水槽</div>
     </div>
 
     <div class="tl-item">
@@ -502,8 +508,8 @@
         ⬦ <strong>桜島ビジターセンター</strong>：噴火の歴史・溶岩・自然を学べるミニ博物館・無料<br>
         ⬦ 溶岩なぎさ遊歩道からの桜島・錦江湾の景色も絶景。
       </div>
-      <img src="https://www.kagoshima-yokanavi.jp/files/upload/spot/10022/main.jpg" class="tl-photo" alt="溶岩なぎさ公園 足湯" onerror="this.style.display='none'">
-      <div class="photo-caption">溶岩なぎさ公園 足湯（鹿児島市観光ナビ）</div>
+      <img src="ashiyu.jpg" class="tl-photo" alt="溶岩なぎさ公園 足湯" onerror="this.style.display='none'">
+      <div class="photo-caption">溶岩なぎさ公園 足湯と桜島</div>
       <a href="https://visitor.sakurajima.gr.jp/" class="tl-link" target="_blank">🌋 ビジターセンター公式（足湯状況確認）</a>
     </div>
 
